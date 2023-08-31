@@ -6,8 +6,8 @@ import { missing_title, title_length_error, title_titlecase, missing_labels, che
 const PAT = core.getInput('PAT');
 const discussionBody = github.context.payload.discussion.body;
 const lines = discussionBody.split('\n');
-const repoOwner = 'rainfall-one';
-const repoName = 'gitops-test';
+const repoOwner = core.getInput('repo_owner');
+const repoName = core.getInput('repo_name');
 
 let title = '';
 let labels = [];

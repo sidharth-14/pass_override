@@ -1,0 +1,19 @@
+name: 'Conditional Check'
+description: 'Conditional checks if override section is present.'
+inputs:
+  github-context:
+    description: 'The GitHub context payload'
+    required: true
+  PAT:
+    description: "GitHub repository token"
+    required: true  
+  repo_owner:
+    description: 'Repository Owner Name'
+    required: true
+  repo_name:
+    description: "Repository Name"
+    required: true  
+
+runs:
+  using: 'node16'
+  main: 'index.js'
