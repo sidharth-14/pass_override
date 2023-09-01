@@ -7,9 +7,6 @@ inputs:
   PAT:
     description: "GitHub repository token"
     required: true  
-  repo_owner:
-    description: 'Repository Owner Name'
-    required: true
   repo_name:
     description: "Repository Name"
     required: true  
