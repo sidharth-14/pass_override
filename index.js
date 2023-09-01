@@ -65,12 +65,13 @@ axios
                 const label = repo_labels.find(labelObj => labelObj.name === labelName);
                 return label ? label.node_id : null;
             });
+
             if (labelIds.includes(null)){
                 missingFields.push(labels_incorrect);
+            }else{
+                console.log('Label IDs:', labelIds);
+                core.setOutput("label_id", labelIds);
             }
-
-            console.log('Label IDs:', labelIds);
-            core.setOutput("label_id", labelIds);
         } else {
             console.error('disc_labels is not an array');
         }
