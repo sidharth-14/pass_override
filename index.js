@@ -90,7 +90,10 @@ if (missingFields.length > 0) {
     core.setOutput('Missing', missingFieldsMessages);
     console.log('Missing Fields:\n', missingFieldsMessages);
 }
-
+function isTitleCase(str) {
+    const words = str.split(' ');
+    return words.every(word => /^[A-Z][a-z]*$/.test(word));
+  }
 core.setOutput('override_title', title);
 core.setOutput('override_labels', labels);
 core.setOutput('override_body', body);
