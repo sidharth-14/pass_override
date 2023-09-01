@@ -65,7 +65,7 @@ axios
                 const label = repo_labels.find(labelObj => labelObj.name === labelName);
                 return label ? label.node_id : null;
             });
-            if (labelIds.includes('null')){
+            if (labelIds.includes(null)){
                 missingFields.push(labels_incorrect);
             }
 
