@@ -3,7 +3,7 @@ description: 'Conditional checks if override section is present.'
 inputs:
   github-context:
     description: 'The GitHub context payload'
-    required: true
+    required: false
   PAT:
     description: "GitHub repository token"
     required: true  
