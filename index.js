@@ -60,7 +60,7 @@ axios
         }));
         console.log('Labels:', repo_labels);
 
-        if (Array.isArray(infolabel)) {
+        if (Array.isArray(labels)) {
             const labelIds = labels.map(labelName => {
                 const label = repo_labels.find(labelObj => labelObj.name === labelName);
                 return label ? label.node_id : null;
