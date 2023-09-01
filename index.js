@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
 import axios from 'axios';
 import * as github from '@actions/github';
-import { missing_title, title_length_error, title_titlecase, missing_labels, check_labels, missing_body } from './constant.js';
+import { missing_title, title_length_error, title_titlecase, missing_labels, check_labels, labels_incorrect, missing_body } from './constant.js';
 
 const PAT = core.getInput('PAT');
 const discussionBody = github.context.payload.discussion.body;
@@ -65,6 +65,9 @@ axios
                 const label = repo_labels.find(labelObj => labelObj.name === labelName);
                 return label ? label.node_id : null;
             });
+            if (labelIds.includes('null')){
+                missingFields.push(labels_incorrect);
+            }
 
             console.log('Label IDs:', labelIds);
             core.setOutput("label_id", labelIds);

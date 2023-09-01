@@ -8,4 +8,6 @@ export const missing_labels = '${\\color{red} Labels in prompt is missing.Please
 
 export const check_labels = '${\\color{red} Labels in prompt are not correct. Please check labels and try again.}$';
 
+export const labels_incorrect = '${\\color{red} Defined labels are not present in repository labels.}$';
+
 export const missing_body ='${\\color{red} Body in prompt is missing. Please add body try again.}$';
