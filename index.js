@@ -67,6 +67,7 @@ axios
             });
 
             if (labelIds.includes(null)){
+                console.log("Labels incorrect");
                 missingFields.push(labels_incorrect);
             }else{
                 console.log('Label IDs:', labelIds);
