@@ -5,6 +5,7 @@ import { missing_title, title_length_error, title_titlecase, missing_labels, che
 
 const PAT = core.getInput('PAT');
 const discussionBody = github.context.payload.discussion.body;
+const repositoryNodeId = github.context.payload.repository.node_id;
 const lines = discussionBody.split('\n');
 const repoName = core.getInput('repo_name');
 
@@ -101,3 +102,4 @@ function isTitleCase(str) {
 core.setOutput('override_title', title);
 core.setOutput('override_labels', labels);
 core.setOutput('override_body', body);
+core.setOutput('override_repo_id',repositoryNodeId);
